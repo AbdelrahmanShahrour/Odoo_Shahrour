@@ -1,0 +1,61 @@
+<odoo>
+    <template id="stock_list_template">
+        <t t-name="your_module_name.stock_list_template">
+            <h1>Stock Data</h1>
+            <table>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Location ID</th>
+                    <th>Location Name</th>
+                </tr>
+                <t t-foreach="stock_data" t-as="quant">
+                    <tr>
+                        <td>
+                            <t t-esc="quant['product_id']"/>
+                        </td>
+                        <td>
+                            <t t-esc="quant['product_name']"/>
+                        </td>
+                        <td>
+                            <t t-esc="quant['quantity']"/>
+                        </td>
+                        <td>
+                            <t t-esc="quant['location_id']"/>
+                        </td>
+                        <td>
+                            <t t-esc="quant['location_name']"/>
+                        </td>
+                    </tr>
+                </t>
+            </table>
+        </t>
+    </template>
+
+
+    <template id="partner_form_template">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <h2 class="text-center">Create a New Partner</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form action="/create_partner" method="post" class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" class="form-control" required="required"/><br/>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control" required="required"/><br/>
+
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" name="phone" class="form-control"/><br/>
+
+                            <input type="submit" value="Create Partner" class="btn btn-primary"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
