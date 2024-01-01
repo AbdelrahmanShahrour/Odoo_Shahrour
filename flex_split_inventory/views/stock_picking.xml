@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_picking_form" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header" position="inside">
+                    <button string="Check All" type="object" name="check_all_action"/>
+                    <button string="Uncheck All" type="object" name="uncheck_all_action"/>
+                    <button string="SPLIT" type="object" name="split_action"
+                            attrs="{'invisible': [('state', '!=', 'assigned')]}"/>
+                    <button string="EXTRACT" type="object" name="extract_action"
+                            attrs="{'invisible': [('state', '!=', 'assigned')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
