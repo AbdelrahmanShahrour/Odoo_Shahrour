@@ -1,0 +1,15 @@
+{
+    'name': 'MRP Replenish dynamic',
+    'version': '1.0',
+    'summary': 'edit action on mrp production',
+    'description': 'edit action on mrp production',
+    'category': 'Manufacturing',
+    'author': 'Abdalrahman Shahrour',
+    'website': 'https://www.linkedin.com/in/shahrour/',
+    'license': 'AGPL-3',
+    'depends': ['base', 'mrp'],
+    'data': ['views/manufacturing.xml'],
+    'installable': True,
+    'auto_install': False,
+    'qweb': ['static/src/custom_styles.css'],
+}
